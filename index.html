@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mabel Barahona — Content Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #120E22;
+    --bg-soft: #1B1533;
+    --card: #211a3d;
+    --pink: #FF3D8A;
+    --orange: #FF9F1C;
+    --cyan: #29D9D0;
+    --violet: #8C5CFF;
+    --lime: #D6FF3D;
+    --ink: #F5F2FF;
+    --ink-dim: #B3A9DE;
+    --radius: 22px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora', sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Unbounded', sans-serif;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--pink); color:var(--bg);}
+
+  /* ---------- utility ---------- */
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Sora'; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    font-size:12px; color:var(--lime); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:''; width:26px; height:2px; background:var(--lime); display:inline-block;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:100px; font-weight:700; font-size:14px;
+    border:2px solid var(--ink); cursor:pointer; transition:transform .25s ease, background .25s ease, color .25s ease;
+    font-family:'Sora';
+  }
+  .btn-solid{background:var(--ink); color:var(--bg);}
+  .btn-solid:hover{transform:translateY(-3px); background:var(--lime); border-color:var(--lime);}
+  .btn-ghost{background:transparent; color:var(--ink);}
+  .btn-ghost:hover{transform:translateY(-3px); background:var(--ink); color:var(--bg);}
+  .pill{
+    padding:7px 14px; border-radius:100px; font-size:12px; font-weight:600;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); color:var(--ink-dim);
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    backdrop-filter:blur(14px); background:rgba(18,14,34,.7);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1180px; margin:0 auto;}
+  .logo{font-family:'Unbounded'; font-weight:800; font-size:18px; letter-spacing:-.02em;}
+  .logo span{color:var(--pink);}
+  .navlinks{display:flex; gap:32px; font-size:14px; font-weight:600;}
+  .navlinks a{color:var(--ink-dim); transition:color .2s;}
+  .navlinks a:hover{color:var(--ink);}
+  .navcta{display:flex; gap:10px;}
+  #menuBtn{display:none; background:none; border:none; color:var(--ink); font-size:24px; cursor:pointer;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; padding:170px 0 100px; overflow:hidden;
+  }
+  .blob{
+    position:absolute; border-radius:50%; filter:blur(90px); opacity:.55; z-index:0;
+  }
+  .blob1{width:480px; height:480px; background:var(--pink); top:-120px; right:-140px;}
+  .blob2{width:420px; height:420px; background:var(--violet); bottom:-160px; left:-140px;}
+  .hero-inner{position:relative; z-index:1; display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center;}
+  .hero h1{
+    font-size:clamp(40px, 6vw, 74px); line-height:.98; font-weight:900; letter-spacing:-.02em;
+  }
+  .hero h1 .grad{
+    background:linear-gradient(100deg, var(--pink), var(--orange) 45%, var(--lime) 90%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.lede{
+    margin-top:22px; font-size:17px; color:var(--ink-dim); max-width:46ch; line-height:1.6;
+  }
+  .hero-ctas{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-stats{display:flex; gap:28px; margin-top:46px; flex-wrap:wrap;}
+  .hero-stats div b{display:block; font-family:'Unbounded'; font-size:26px; color:var(--lime);}
+  .hero-stats div span{font-size:12px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.06em;}
+
+  /* phone mockup */
+  .phone{
+    position:relative; width:250px; aspect-ratio:9/19.5; margin:0 auto;
+    border:10px solid #05030d; border-radius:44px; background:#000;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.7), 0 0 0 2px rgba(255,255,255,.06);
+    overflow:hidden;
+  }
+  .phone::before{
+    content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:38%; height:22px; background:#05030d; border-radius:0 0 16px 16px; z-index:5;
+  }
+  .phone-screen{width:100%; height:100%; overflow:hidden; background:linear-gradient(160deg, var(--violet), var(--pink) 60%, var(--orange));}
+  .phone-embed{width:100%; height:100%; overflow-y:auto;}
+  .float-chip{
+    position:absolute; background:rgba(20,15,40,.85); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.15); border-radius:14px; padding:8px 12px;
+    font-size:12px; font-weight:700; display:flex; align-items:center; gap:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .hero .phone-wrap{position:relative;}
+  .hero .chip1{top:8%; left:-18%;}
+  .hero .chip2{bottom:14%; right:-20%;}
+  .hero .chip3{top:44%; right:-24%;}
+
+  /* ---------- section base ---------- */
+  section{padding:110px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); font-weight:800; letter-spacing:-.02em;}
+  .section-head p{color:var(--ink-dim); margin-top:14px; font-size:16px; line-height:1.6;}
+
+  /* ---------- about ---------- */
+  .about{background:var(--bg-soft); border-radius:40px; margin:0 24px; padding:90px 60px;}
+  .about-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start;}
+  .about-tools{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
+  .about p{color:var(--ink-dim); line-height:1.75; font-size:16px;}
+  .about p + p{margin-top:16px;}
+  .about-card{
+    background:var(--card); border-radius:24px; padding:28px; border:1px solid rgba(255,255,255,.08);
+  }
+  .about-card h3{font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--lime); margin-bottom:14px;}
+  .about-card ul{list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-dim);}
+
+  /* ---------- services ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .service-card{
+    background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:30px 24px;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .service-card:hover{transform:translateY(-6px); border-color:var(--pink);}
+  .service-num{font-family:'Unbounded'; font-size:12px; color:var(--ink-dim); margin-bottom:18px;}
+  .service-card h3{font-size:18px; margin-bottom:10px; font-weight:700;}
+  .service-card p{font-size:14px; color:var(--ink-dim); line-height:1.6;}
+  .service-dot{width:34px; height:34px; border-radius:10px; margin-bottom:18px;}
+
+  /* ---------- portfolio ---------- */
+  .project{
+    display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center;
+    padding:64px 0; border-top:1px solid rgba(255,255,255,.08);
+  }
+  .project:nth-child(even) .project-media{order:2;}
+  .project-tag{display:inline-block; padding:6px 14px; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:18px;}
+  .project h3{font-size:clamp(24px,3vw,32px); font-weight:800; margin-bottom:14px; letter-spacing:-.01em;}
+  .project p{color:var(--ink-dim); line-height:1.7; font-size:15px; margin-bottom:18px;}
+  .project-stats{display:flex; gap:22px; margin:22px 0; flex-wrap:wrap;}
+  .project-stats div b{display:block; font-family:'Unbounded'; font-size:22px;}
+  .project-stats div span{font-size:11px; color:var(--ink-dim); text-transform:uppercase;}
+  .project-links{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+  .link-chip{
+    font-size:13px; font-weight:600; padding:9px 16px; border-radius:100px;
+    border:1px solid rgba(255,255,255,.18); display:inline-flex; align-items:center; gap:6px;
+    transition:all .2s;
+  }
+  .link-chip:hover{background:var(--ink); color:var(--bg);}
+  .project-media{display:flex; justify-content:center; gap:26px; flex-wrap:wrap;}
+  .project-media .phone{width:210px;}
+
+  /* ---------- appearances ---------- */
+  .appear-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .appear-grid .phone{width:100%;}
+  .appear-card p{margin-top:12px; font-size:13px; color:var(--ink-dim); text-align:center;}
+
+  /* ---------- contact ---------- */
+  .contact{
+    background:linear-gradient(135deg, var(--violet), var(--pink) 60%, var(--orange));
+    border-radius:40px; margin:0 24px; padding:90px 60px; position:relative; overflow:hidden;
+  }
+  .contact h2{font-size:clamp(32px,5vw,54px); font-weight:900; color:var(--bg); max-width:14ch; letter-spacing:-.02em;}
+  .contact p{color:rgba(18,14,34,.75); margin-top:16px; max-width:44ch; font-size:16px; line-height:1.6;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:end; margin-top:40px;}
+  .contact-form{display:flex; flex-direction:column; gap:14px;}
+  .contact-form input, .contact-form textarea{
+    background:rgba(18,14,34,.12); border:2px solid rgba(18,14,34,.3); border-radius:14px;
+    padding:14px 16px; font-family:'Sora'; font-size:14px; color:var(--bg); font-weight:600;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(18,14,34,.55);}
+  .contact-form textarea{resize:vertical; min-height:100px;}
+  .contact-form button{
+    background:var(--bg); color:var(--ink); border:none; padding:16px; border-radius:14px;
+    font-weight:700; font-family:'Sora'; cursor:pointer; transition:transform .2s;
+  }
+  .contact-form button:hover{transform:scale(1.02);}
+  .contact-socials{display:flex; flex-direction:column; gap:12px;}
+  .social-row{
+    display:flex; align-items:center; justify-content:space-between; padding:16px 20px;
+    background:rgba(18,14,34,.14); border-radius:16px; font-weight:700; color:var(--bg);
+    border:2px solid rgba(18,14,34,.22); transition:transform .2s;
+  }
+  .social-row:hover{transform:translateX(6px); background:rgba(18,14,34,.9); color:var(--ink);}
+
+  footer{padding:40px 24px; text-align:center; color:var(--ink-dim); font-size:13px;}
+
+  @media (max-width: 880px){
+    .navlinks, .navcta{display:none;}
+    #menuBtn{display:block;}
+    .hero-inner, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .services-grid, .appear-grid{grid-template-columns:repeat(2,1fr);}
+    .project, .project:nth-child(even) .project-media{grid-template-columns:1fr; order:0;}
+    .about{padding:50px 26px;}
+    .contact{padding:50px 26px;}
+    .hero .chip1, .hero .chip2, .hero .chip3{display:none;}
+  }
+  @media (max-width:520px){
+    .services-grid, .appear-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">mabel<span>.</span>bh</div>
+    <div class="navlinks">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="navcta">
+      <a href="#contacto" class="btn btn-solid" style="padding:10px 22px; font-size:13px;">Trabajemos juntos</a>
+    </div>
+    <button id="menuBtn">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Content Creator & Realizadora Audiovisual</div>
+      <h1>Historias que <span class="grad">detienen el scroll.</span></h1>
+      <p class="lede">Soy Mabel Barahona, comunicadora audiovisual especializada en crear contenido de video vertical que hace crecer marcas de verdad — desde la idea hasta la edición final.</p>
+      <div class="hero-ctas">
+        <a href="#portafolio" class="btn btn-solid">Ver portafolio</a>
+        <a href="mailto:mabel.bh.22@gmail.com" class="btn btn-ghost">Escríbeme</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>+5</b><span>Marcas & proyectos</span></div>
+        <div><b>x2</b><span>Crecimiento de audiencia</span></div>
+        <div><b>+40%</b><span>Alcance orgánico logrado</span></div>
+      </div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen" id="heroEmbed"></div>
+      </div>
+      <div class="float-chip chip1">❤️ Likes</div>
+      <div class="float-chip chip2">💬 Comentarios</div>
+      <div class="float-chip chip3">▶️ Vistas</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre-mi">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">Sobre mí</div>
+      <h2 style="font-size:34px; font-weight:800; margin-bottom:18px; letter-spacing:-.02em;">De la idea al video publicado.</h2>
+    </div>
+    <div>
+      <p>Soy comunicadora audiovisual digital y realizadora integral, con experiencia liderando equipos multidisciplinarios y diseñando estrategias de contenido de alto rendimiento que se traducen en crecimiento real de audiencia.</p>
+      <p>Me muevo cómoda en todo el proceso: conceptualizo la idea, dirijo el rodaje, opero cámara y dron, edito en Premiere y CapCut, y cierro con motion graphics en After Effects. También lidero equipos de redes sociales, asegurando que cada pieza respete la línea gráfica y editorial de la marca.</p>
+      <div class="about-tools">
+        <span class="pill">Premiere Pro</span>
+        <span class="pill">CapCut Pro</span>
+        <span class="pill">After Effects</span>
+        <span class="pill">DaVinci Resolve</span>
+        <span class="pill">Avid Media Composer</span>
+        <span class="pill">Photoshop</span>
+        <span class="pill">Illustrator</span>
+        <span class="pill">Canva</span>
+        <span class="pill">Piloto de dron</span>
+        <span class="pill">OBS / Streaming</span>
+      </div>
+      <div class="about-card" style="margin-top:30px;">
+        <h3>Formación</h3>
+        <ul>
+          <li>Técnico en Comunicación Audiovisual Digital — Instituto Profesional Santo Tomás (2024–2026)</li>
+          <li>Certificación Internacional Avid Media Composer — IP Santo Tomás (2026)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Servicios</div>
+      <h2>Qué puedo hacer por tu marca</h2>
+      <p>Contenido pensado para plataformas verticales — Instagram, TikTok y YouTube Shorts — con estrategia detrás de cada publicación.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-dot" style="background:var(--pink);"></div>
+        <h3>Content Creation</h3>
+        <p>Ideación, grabación y edición de video vertical adaptado a las tendencias y códigos de cada plataforma.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-dot" style="background:var(--orange);"></div>
+        <h3>Estrategia digital</h3>
+        <p>Planes de contenido orientados a crecimiento de audiencia y engagement, con análisis de tendencias.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-dot" style="background:var(--cyan);"></div>
+        <h3>Edición & Motion Graphics</h3>
+        <p>Postproducción en Premiere Pro, CapCut y After Effects, incluyendo animación e identidad gráfica.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-dot" style="background:var(--lime);"></div>
+        <h3>Social Media Management</h3>
+        <p>Dirección de línea gráfica y editorial, coordinación de equipos y gestión integral de cuentas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Portafolio</div>
+      <h2>Proyectos destacados</h2>
+      <p>Una selección del contenido que he creado, dirigido y editado para marcas, productoras y creadores.</p>
+    </div>
+
+    <!-- Edson Weichafe / MECSA -->
+    <div class="project">
+      <div>
+        <span class="project-tag" style="background:rgba(255,61,138,.15); color:var(--pink);">Content Creator & Estratega Digital</span>
+        <h3>Edson Weichafe · Constructora MECSA</h3>
+        <p>Diseño y lidero la producción, postproducción y estrategia de contenido en video vertical para Instagram, TikTok y YouTube Shorts, enfocado en el sector construcción y arquitectura.</p>
+        <div class="project-stats">
+          <div><b style="color:var(--pink);">5K → 10K</b><span>Seguidores Instagram</span></div>
+          <div><b style="color:var(--pink);">3K → 10K</b><span>Seguidores TikTok</span></div>
+          <div><b style="color:var(--pink);">3 meses</b><span>Para duplicar audiencia</span></div>
+        </div>
+        <div class="project-links">
+          <a class="link-chip" href="https://www.instagram.com/edson_weichafe" target="_blank">Instagram ↗</a>
+          <a class="link-chip" href="https://www.tiktok.com/@edson_weichafe" target="_blank">TikTok ↗</a>
+        </div>
+      </div>
+      <div class="project-media">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DZ2pYeAOpxD/"></div></div></div>
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="tiktok" data-url="https://vt.tiktok.com/ZSX6saHL4/"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Wally's -->
+    <div class="project">
+      <div class="project-media">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="tiktok" data-url="https://vt.tiktok.com/ZSX6Gt4rP/"></div></div></div>
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="tiktok" data-url="https://vt.tiktok.com/ZSX6GPmY6/"></div></div></div>
+      </div>
+      <div>
+        <span class="project-tag" style="background:rgba(255,159,28,.15); color:var(--orange);">Content Creator</span>
+        <h3>Wally's Burgers, Fries & Shakes</h3>
+        <p>Asistente del área creativa de TikTok: ideación, content creation y aparición en video. Adapté los códigos de marca a las tendencias dinámicas de la plataforma (2024–2025).</p>
+        <div class="project-stats">
+          <div><b style="color:var(--orange);">+40%</b><span>Alcance orgánico</span></div>
+          <div><b style="color:var(--orange);">+35%</b><span>Tasa de engagement</span></div>
+        </div>
+        <div class="project-links">
+          <a class="link-chip" href="https://www.tiktok.com/@wallyschile" target="_blank">TikTok ↗</a>
+          <a class="link-chip" href="https://vt.tiktok.com/ZSX6GV6D2/" target="_blank">Más contenido ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conductores Designados -->
+    <div class="project">
+      <div>
+        <span class="project-tag" style="background:rgba(41,217,208,.15); color:var(--cyan);">Realizadora Integral & Content Creator</span>
+        <h3>Vodcast "Conductores Designados" · Nerco Producciones</h3>
+        <p>Co-creadora del concepto original del programa automotriz. Diseñé la línea gráfica y la identidad audiovisual para YouTube y RR.SS, piloté dron para tomas aéreas, edité el contenido extenso en Premiere y las piezas nativas en CapCut, y ejecuté el 100% de la animación y motion graphics del programa.</p>
+        <div class="project-links">
+          <a class="link-chip" href="https://www.instagram.com/conductordesignadovodcast" target="_blank">Instagram ↗</a>
+          <a class="link-chip" href="https://www.tiktok.com/@conductor.designado" target="_blank">TikTok ↗</a>
+        </div>
+      </div>
+      <div class="project-media">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DY2_mRfx_7z/"></div></div></div>
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DYiVKLfxLaU/"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Nerco identidad digital -->
+    <div class="project">
+      <div class="project-media">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DaBoVXzRgP_/"></div></div></div>
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="tiktok" data-url="https://vt.tiktok.com/ZSX6GmtfN/"></div></div></div>
+      </div>
+      <div>
+        <span class="project-tag" style="background:rgba(140,92,255,.18); color:var(--violet);">Content Creator & Social Media Manager</span>
+        <h3>Identidad digital · Nerco Producciones</h3>
+        <p>Reestructuré por completo la identidad digital de la productora, creando una nueva línea gráfica y estrategia de contenidos para RR.SS, además de liderar un equipo de 4 personas en el área de Redes Sociales.</p>
+        <div class="project-links">
+          <a class="link-chip" href="https://www.instagram.com/nerco_cl" target="_blank">Instagram ↗</a>
+          <a class="link-chip" href="https://www.tiktok.com/@nerco_cl" target="_blank">TikTok ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diego Leiva -->
+    <div class="project">
+      <div>
+        <span class="project-tag" style="background:rgba(214,255,61,.15); color:var(--lime);">Content Creator</span>
+        <h3>Diego Leiva</h3>
+        <p>Creación de contenido de video vertical para Instagram y TikTok, adaptando el tono personal del creador a formatos ágiles y de tendencia.</p>
+        <div class="project-links">
+          <a class="link-chip" href="https://www.instagram.com/diego.leiva95" target="_blank">Instagram ↗</a>
+          <a class="link-chip" href="https://www.tiktok.com/@diego_leiva95" target="_blank">TikTok ↗</a>
+        </div>
+      </div>
+      <div class="project-media">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DagfVCoB504/"></div></div></div>
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="tiktok" data-url="https://vt.tiktok.com/ZSX6GrYFX/"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apariciones">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Frente a cámara</div>
+      <h2>Apariciones como talento</h2>
+      <p>Además de dirigir y editar, también aparezco frente a cámara en piezas de contenido.</p>
+    </div>
+    <div class="appear-grid">
+      <div class="appear-card">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DNHCdLOReoy/"></div></div></div>
+      </div>
+      <div class="appear-card">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DO3mHxVkQNx/"></div></div></div>
+      </div>
+      <div class="appear-card">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DOJcTl_kR_D/"></div></div></div>
+      </div>
+      <div class="appear-card">
+        <div class="phone"><div class="phone-screen"><div class="phone-embed" data-embed="ig" data-url="https://www.instagram.com/reel/DOjqHmRkiv-/"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Creemos tu próximo contenido.</h2>
+      <p>¿Tienes una marca, un producto o una idea que necesita moverse en redes? Escríbeme y hablemos.</p>
+      <div class="contact-grid">
+        <form class="contact-form" onsubmit="event.preventDefault(); window.location.href='mailto:mabel.bh.22@gmail.com?subject=' + encodeURIComponent('Nuevo proyecto — ' + this.nombre.value) + '&body=' + encodeURIComponent(this.mensaje.value + '\n\nContacto: ' + this.email.value);">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo" required>
+          <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+        <div class="contact-socials">
+          <a class="social-row" href="mailto:mabel.bh.22@gmail.com" target="_blank">✉️ Escríbeme un correo</a>
+          <a class="social-row" href="https://www.instagram.com/notmabel._" target="_blank">📷 Instagram · @notmabel._</a>
+          <a class="social-row" href="https://www.tiktok.com/@notmabel_" target="_blank">🎵 TikTok · @notmabel_</a>
+          <a class="social-row" href="https://www.linkedin.com/in/mabel-barahona-9b7742341" target="_blank">💼 LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Mabel Barahona · Comunicadora Audiovisual — © 2026</footer>
+
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZ2pYeAOpxD/" style="display:none;"></blockquote>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script>
+  // Build real embeds for each phone screen using the official oEmbed widgets
+  function buildEmbeds(){
+    document.querySelectorAll('[data-embed="ig"]').forEach(function(el){
+      var url = el.getAttribute('data-url');
+      el.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="'+url+'" data-instgrm-version="14" style="margin:0; width:100%; min-width:100%;"></blockquote>';
+    });
+    document.querySelectorAll('[data-embed="tiktok"]').forEach(function(el){
+      var url = el.getAttribute('data-url');
+      el.innerHTML = '<blockquote class="tiktok-embed" cite="'+url+'" data-video-id="" style="max-width:100%; min-width:100%; margin:0;"><section></section></blockquote>';
+    });
+    // heroEmbed shows the flagship reel
+    var hero = document.getElementById('heroEmbed');
+    hero.innerHTML = '<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZ2pYeAOpxD/" data-instgrm-version="14" style="margin:0; width:100%; min-width:100%;"></blockquote>';
+
+    if(window.instgrm){ window.instgrm.Embeds.process(); }
+    if(window.tiktokEmbed && window.tiktokEmbed.lib && window.tiktokEmbed.lib.render){ window.tiktokEmbed.lib.render(document.querySelectorAll('.tiktok-embed')); }
+  }
+  window.addEventListener('load', buildEmbeds);
+
+  // mobile menu (simple toggle fallback -> smooth scroll already covers most needs)
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    var links = document.querySelector('.navlinks');
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.cssText += 'position:fixed; top:64px; left:0; right:0; background:#1B1533; flex-direction:column; padding:20px 24px; gap:18px; border-bottom:1px solid rgba(255,255,255,.1);';
+  });
+</script>
+</body>
+</html>
