@@ -1,4 +1,8 @@
-"""Monitor de precios Smart TV Samsung/LG 40-43" en tiendas chilenas (Cyber/Black Friday 2026).
+"""Monitor de precios Smart TV 40-43" en tiendas chilenas (Cyber/Black Friday 2026).
+
+Marcas con respaldo y sistema de apps/navegación bien evaluado:
+  Samsung (Tizen), LG (webOS), TCL / Xiaomi / Philips / Sony (Google TV), TCL (Roku TV), Hisense solo con Google TV.
+  Se excluyen VIDAA (catálogo de apps más limitado) y marcas menores (Master-G, Caixun, Aiwa, Huus, etc.).
 
 Fuentes:
   - Solotodo (publicapi.solotodo.com): precios actuales + historial por tienda
@@ -23,6 +27,8 @@ HIST_FROM = "2026-05-01T00:00:00Z"  # incluye CyberDay junio y el Cyber de octub
 PRE_FROM = dt.datetime(2026, 8, 1, tzinfo=dt.timezone.utc)
 PRE_TO = dt.datetime(2026, 11, 10, tzinfo=dt.timezone.utc)  # "precio normal" antes de la previa del evento
 UA = {"User-Agent": "curl/8.5"}
+BRANDS = {"Samsung", "LG", "TCL", "Xiaomi", "Philips", "Sony", "Hisense"}
+GOOD_OS = {"Tizen", "webOS", "Google TV", "Roku TV"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
 
@@ -41,22 +47,25 @@ def solotodo():
     chile = {s["id"]: s["name"] for s in stores if s.get("country_id") == 1}
 
     prods = {}
-    for q in ("samsung", "lg"):
-        url = f"https://publicapi.solotodo.com/categories/11/browse/?search={q}&page_size=50&ordering=offer_price_usd"
-        while url:
-            d = get_json(url)
-            for b in d["results"]:
-                for e in b["product_entries"]:
-                    p, s = e["product"], e["product"]["specs"]
-                    if s.get("brand_unicode") not in ("Samsung", "LG"):
-                        continue
-                    if s.get("size_family_value") not in (40, 43):
-                        continue
-                    offer = float(e["metadata"]["prices_per_currency"][0]["offer_price"])
-                    if 100_000 <= offer <= 330_000:
-                        prods[p["id"]] = {"id": p["id"], "model": p["name"], "size": s.get("size_family_value"),
-                                          "res": s.get("resolution_commercial_name")}
-            url = d.get("next")
+    url = "https://publicapi.solotodo.com/categories/11/browse/?page_size=50&ordering=offer_price_usd"
+    while url:
+        d = get_json(url)
+        page_prices = []
+        for b in d["results"]:
+            for e in b["product_entries"]:
+                p, s = e["product"], e["product"]["specs"]
+                offer = float(e["metadata"]["prices_per_currency"][0]["offer_price"])
+                page_prices.append(offer)
+                if s.get("brand_unicode") not in BRANDS or s.get("operating_system_name") not in GOOD_OS:
+                    continue
+                if s.get("size_family_value") not in (40, 43):
+                    continue
+                if 100_000 <= offer <= 330_000:
+                    prods[p["id"]] = {"id": p["id"], "model": p["name"], "size": s.get("size_family_value"),
+                                      "res": s.get("resolution_commercial_name"), "os": s.get("operating_system_name")}
+        if page_prices and min(page_prices) > 330_000:
+            break
+        url = d.get("next")
 
     rows = []
     for p in prods.values():
@@ -82,7 +91,8 @@ def solotodo():
 
 def falabella():
     rows, seen = [], set()
-    for q in ("smart tv 43 samsung", "smart tv 40 samsung", "smart tv 43 lg", "samsung 40 f6000", "lg 43 lb65"):
+    for q in ("smart tv 43 samsung", "smart tv 40 samsung", "smart tv 43 lg", "samsung 40 f6000", "lg 43 lb65",
+              "smart tv 43 tcl", "smart tv 40 tcl", "xiaomi tv 43", "smart tv 43 google tv"):
         for page in (1, 2):
             url = "https://www.falabella.com/falabella-cl/search?Ntt=" + urllib.parse.quote_plus(q) + f"&page={page}"
             try:
@@ -95,7 +105,9 @@ def falabella():
                 continue
             for p in results:
                 name, brand = p.get("displayName", ""), (p.get("brand") or "").upper()
-                if brand not in ("SAMSUNG", "LG") or p.get("productId") in seen:
+                if brand not in ("SAMSUNG", "LG", "TCL", "XIAOMI", "PHILIPS", "SONY", "HISENSE") or p.get("productId") in seen:
+                    continue
+                if brand not in ("SAMSUNG", "LG") and not re.search(r"google|roku", name, re.I):
                     continue
                 if not re.search(r"\b(40|43)\s*(\"|”|''|\s|$)", name) or re.search(r"monitor|watch|marco", name, re.I):
                     continue
@@ -145,10 +157,10 @@ def main():
     for r in st:
         by_model.setdefault(r["model"], []).append(r)
 
-    lines = [f"# Monitor Smart TV Samsung/LG 40–43\" — presupuesto {fmt(BUDGET)}",
+    lines = [f"# Monitor Smart TV 40–43\" (Samsung, LG, TCL, Xiaomi, Philips, Sony con buen sistema) — presupuesto {fmt(BUDGET)}",
              f"Actualizado: {stamp.replace('_', ' ')} (hora Chile). Fuente: Solotodo (historial por tienda) + Falabella directo.",
              "", "## Resumen por modelo (mejor precio actual en Chile)", "",
-             "| Modelo | Tamaño/Res | Mejor precio hoy | Tienda | Mín. histórico (desde mayo) | Precio normal ago–nov | vs. revisión anterior | Veredicto |",
+             "| Modelo | Tamaño/Res/Sistema | Mejor precio hoy | Tienda | Mín. histórico (desde mayo) | Precio normal ago–nov | vs. revisión anterior | Veredicto |",
              "|---|---|---|---|---|---|---|---|"]
     alerts = []
     summary = []
@@ -165,11 +177,11 @@ def main():
         if model in prev_best:
             d = best["offer"] - prev_best[model]
             delta = "=" if d == 0 else ("▼ " if d < 0 else "▲ ") + fmt(abs(d))
-        summary.append((best["offer"], f"| {model} | {best['size']}\" {best['res']} | **{fmt(best['offer'])}** | "
+        summary.append((best["offer"], f"| {model} | {best['size']}\" {best['res']} · {best.get('os', '')} | **{fmt(best['offer'])}** | "
                         f"[{best['store']}]({best['url']}) | {fmt(mmin)} ({mmin_r['store']}, {mmin_r['min_date']}) | "
                         f"{fmt(med)} | {delta} | {verdict(best, mmin)} |"))
         if best["offer"] < BUDGET:
-            alerts.append(f"{model} ({best['size']}\" {best['res']}) {fmt(best['offer'])} en {best['store']}")
+            alerts.append(f"{model} ({best['size']}\" {best['res']}, {best.get('os', '')}) {fmt(best['offer'])} en {best['store']}")
     lines += [s for _, s in sorted(summary)]
 
     lines += ["", f"## Todas las ofertas bajo {fmt(BUDGET)} (por tienda)", "",
