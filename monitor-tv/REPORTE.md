@@ -1,13 +1,13 @@
 # Monitor Smart TV 40–43" (Samsung, LG, TCL, Xiaomi, Philips, Sony con buen sistema) — presupuesto $200.000
-Actualizado: 2026-11-25 2125 (hora Chile). Fuente: Solotodo (historial por tienda) + Falabella directo.
+Actualizado: 2026-11-26 0012 (hora Chile). Fuente: Solotodo (historial por tienda) + Falabella directo.
 
 ## Resumen por modelo (mejor precio actual en Chile)
 
 | Modelo | Tamaño/Res/Sistema | Mejor precio hoy | Tienda | Mín. histórico (desde mayo) | Precio normal ago–nov | vs. revisión anterior | Veredicto |
 |---|---|---|---|---|---|---|---|
-| TCL 40S5LR | 40" Full HD · Roku TV | **$169.990** | [Lider](https://www.lider.cl/ip/Televisor-Smart-TV-TCL-Roku-TV-40-QLED-FHD-S5LR/00693757487905) | $159.990 (Lider, 2026-08-19) | $179.990 |  | 🟡 aceptable |
+| TCL 40S5LR | 40" Full HD · Roku TV | **$169.990** | [Lider](https://www.lider.cl/ip/Televisor-Smart-TV-TCL-Roku-TV-40-QLED-FHD-S5LR/00693757487905) | $159.990 (Lider, 2026-08-19) | $179.990 | = | 🟡 aceptable |
 | Samsung UN40F6000FGXZS | 40" Full HD · Tizen | **$170.991** | [Lider](https://www.lider.cl/ip/Televisor-LED-40-Full-HD-UN40F6000FGXZS-Smart-TV-Samsung/00880609589300) | $169.990 (Lider, 2026-06-03) | $219.990 | = | 🟢 a ≤5% del mínimo histórico |
-| TCL 43S5LR | 43" Full HD · Roku TV | **$179.990** | [ABC](https://www.abc.cl/smart-tv-qled-fhd-43-tcl-roku-tv-s5lr/29390126.html) | $179.990 (Paris Marketplace, 2026-06-04) | $239.990 |  | 🟢 mínimo histórico (desde mayo) |
+| TCL 43S5LR | 43" Full HD · Roku TV | **$179.990** | [ABC](https://www.abc.cl/smart-tv-qled-fhd-43-tcl-roku-tv-s5lr/29390126.html) | $179.990 (Paris Marketplace, 2026-06-04) | $239.990 | = | 🟢 mínimo histórico (desde mayo) |
 | Samsung UN43U8000HGXZS | 43" 4K Ultra HD · Tizen | **$188.991** | [Lider](https://www.lider.cl/ip/Televisor-43-Crystal-UHD-U8000H-4K-Samsung-Vision-AI-Smart-TV-2026/00880609796433) | $188.991 (Lider, 2026-11-25) | $299.990 | = | 🟢 mínimo histórico (desde mayo) |
 | LG 43LB6500PSB | 43" Full HD · webOS | **$189.990** | [Hites](https://www.hites.com/led-43-lg-43lb6500psb-full-hd-smart-tv-984665001.html) | $169.990 (Paris Marketplace, 2026-10-05) | $229.990 | = | 🟡 aceptable |
 | LG 43LR6000PSA | 43" Full HD · webOS | **$189.990** | [Lider](https://www.lider.cl/ip/Televisor-Smart-TV-LED-43-43LR6000PSA-FHD-LG/00880609613410) | $170.990 (Paris Marketplace, 2026-06-04) | $209.990 | = | 🟡 aceptable |
@@ -15,8 +15,8 @@ Actualizado: 2026-11-25 2125 (hora Chile). Fuente: Solotodo (historial por tiend
 | LG 43LB6500PSB + MINI [43LB6500PSB.MINI] | 43" Full HD · webOS | **$219.990** | [Ripley](https://simple.ripley.cl/smart-tv-lg-full-hd-43-ai-lb65-2026-parlante-xboom-mini-2000412893113p) | $199.990 (Ripley, 2026-10-07) | $249.990 | = | 🟡 aceptable |
 | LG 43LR6000PSA + GRAB [43LR6000PSA.GRAB] | 43" Full HD · webOS | **$219.990** | [Lider](https://www.lider.cl/ip/Televisor-LG-43-43lr6000psa-grab-Smart-TV-Grab/00880609692181) | $199.990 (Lider, 2026-08-13) | $259.990 | = | 🟡 aceptable |
 | LG 43NU800BPSC | 43" 4K Ultra HD · webOS | **$219.990** | [Ripley](https://simple.ripley.cl/smart-tv-lg-nanocell-4k-uhd-43-43nu800bpsc-2000410953772p) | $179.990 (Paris, 2026-10-07) | $269.990 | = | 🔴 caro vs. su historial |
-| TCL 43S5K | 43" Full HD · Google TV | **$219.990** | [Paris Marketplace](https://www.paris.cl/qled-smart-tv-43-full-hd-s5k-MKWUKXD8EB.html) | $169.990 (Ripley Marketplace, 2026-10-27) | $229.828 |  | 🔴 caro vs. su historial |
-| Xiaomi TV A Pro 43 2026 [L43MB-APPH] | 43" 4K Ultra HD · Google TV | **$219.990** | [Paris](https://www.paris.cl/qled-smart-tv-43-4k-lm-a-pro-2026-249745999.html) | $209.990 (Paris, 2026-10-09) | $239.990 |  | 🟢 a ≤5% del mínimo histórico |
+| TCL 43S5K | 43" Full HD · Google TV | **$219.990** | [Paris Marketplace](https://www.paris.cl/qled-smart-tv-43-full-hd-s5k-MKWUKXD8EB.html) | $169.990 (Ripley Marketplace, 2026-10-27) | $229.828 | = | 🔴 caro vs. su historial |
+| Xiaomi TV A Pro 43 2026 [L43MB-APPH] | 43" 4K Ultra HD · Google TV | **$219.990** | [Paris](https://www.paris.cl/qled-smart-tv-43-4k-lm-a-pro-2026-249745999.html) | $209.990 (Paris, 2026-10-09) | $239.990 | = | 🟢 a ≤5% del mínimo histórico |
 | LG 43NU855BPSA | 43" 4K Ultra HD · webOS | **$229.990** | [Tienda Oficial LG](https://www.lg.com/cl/tvs-y-soundbars/nano-4k-uhd/43nu855bpsa/) | $199.990 (Paris Marketplace, 2026-11-11) | $269.990 | = | 🔴 caro vs. su historial |
 
 ## Todas las ofertas bajo $200.000 (por tienda)
@@ -59,7 +59,6 @@ Actualizado: 2026-11-25 2125 (hora Chile). Fuente: Solotodo (historial por tiend
 | **$229.990** | cmr: $229.990, event: $234.990, normal: $249.990 | [Televisor Smart TV A Pro QLED 43" 4K UHD Google TV 2026.](https://www.falabella.com/falabella-cl/product/150774752/xiaomi-tv-a-pro-43u-2026-43-qled-4k-3840-x-2160) | Falabella (vende Xiaomi) |
 | **$239.990** | cmr: $239.990, event: $249.990, normal: $363.990 | [43" Crystal UHD U8000H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/153969109/43-crystal-uhd-u8000h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
 | **$249.990** | cmr: $249.990, event: $259.990, normal: $412.990 | [43" Crystal UHD U8500H 4K Vision AI Smart TV (2026) + Control por Voz](https://www.falabella.com/falabella-cl/product/153969114/43-crystal-uhd-u8500h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
-| **$249.990** | internet: $249.990, normal: $319.990 | [SMART TV 43" NANO UHD AI NU800 4K 2026](https://www.falabella.com/falabella-cl/product/80758814/smart-tv-43-nano-uhd-ai-nu800-4k-2026-lg) | Falabella (vende Falabella) |
 | **$249.990** | cmr: $249.990, event: $259.990, normal: $429.990 | [Smart TV 43 NANO 4K UHD AI NU85 2026 + Magic Remote.](https://www.falabella.com/falabella-cl/product/155245044/smart-tv-43-lg-nano-4k-uhd-ai-nu85-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
 | **$269.990** | cmr: $269.990, internet: $399.990 | [43" Crystal UHD U8000H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/80767573/43-crystal-uhd-u8000h-4k-samsung-vision-ai-smart-tv-2026) | Falabella (vende Falabella) |
 | **$279.990** | event: $279.990, normal: $389.990 | [Smart TV 43 QNED AI Mini LED QNED70 4K 2026.](https://www.falabella.com/falabella-cl/product/154507268/smart-tv-lg-43-qned-ai-mini-led-qned70-4k-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
@@ -67,6 +66,7 @@ Actualizado: 2026-11-25 2125 (hora Chile). Fuente: Solotodo (historial por tiend
 | **$299.990** | internet: $299.990, normal: $469.990 | [43" Mini LED M70H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/80768186/43-mini-led-m70h-4k-samsung-vision-ai-smart-tv-2026) | Falabella (vende Falabella) |
 | **$299.990** | event: $299.990, normal: $468.990 | [43 Mini LED M70H 4K Vision AI Smart TV 2026.](https://www.falabella.com/falabella-cl/product/153969098/43-mini-led-m70h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
 | **$309.990** | internet: $309.990, normal: $359.990 | [SMART TV 43" AI MINI LED QNED70 4K 2026 + Magic Remote](https://www.falabella.com/falabella-cl/product/80758799/smart-tv-43-ai-mini-led-qned70-4k-2026-magic-remote-lg) | Falabella (vende Falabella) |
+| **$319.990** | internet: $319.990 | [SMART TV 43" NANO UHD AI NU800 4K 2026](https://www.falabella.com/falabella-cl/product/80758814/smart-tv-43-nano-uhd-ai-nu800-4k-2026-lg) | Falabella (vende Falabella) |
 | **$419.990** | event: $419.990, normal: $588.991 | [43" Neo QLED QN70H 4K Vision AI Smart TV (2026) + Control por Voz](https://www.falabella.com/falabella-cl/product/153969200/43-neo-qled-qn70h-4k-samsung-vision-ai-smart-tv-2026) | Falabella (vende Samsung) |
 | **$469.990** | internet: $469.990 | [Smart Tv 43 Mini Led 4K M70H](https://www.falabella.com/falabella-cl/product/155863740/smart-tv-43-mini-led-4k-m70h-samsung) | Falabella (vende Tottus) |
 | **$619.990** | cmr: $619.990, internet: $629.990, normal: $999.990 | [43" Neo QLED Mini Led 4K QN90F Vision AI Smart TV (2025)](https://www.falabella.com/falabella-cl/product/17437929/43%22-Neo-QLED-4K-QN90F-Vision-AI-Smart-TV-(2025)-Samsung) | Falabella (vende Falabella) |
