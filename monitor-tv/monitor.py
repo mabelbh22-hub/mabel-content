@@ -1,7 +1,7 @@
 """Monitor de precios Smart TV 40-43" en tiendas chilenas (Cyber/Black Friday 2026).
 
 Marcas con respaldo y sistema de apps/navegación bien evaluado:
-  Samsung (Tizen), LG (webOS), TCL / Xiaomi / Philips / Sony (Google TV), TCL (Roku TV), Hisense solo con Google TV.
+  Samsung (Tizen), LG (webOS), TCL / Xiaomi / Philips / Sony (Google TV), TCL / AOC (Roku TV), Hisense solo con Google TV.
   Se excluyen VIDAA (catálogo de apps más limitado) y marcas menores (Master-G, Caixun, Aiwa, Huus, etc.).
 
 Fuentes:
@@ -27,7 +27,7 @@ HIST_FROM = "2026-05-01T00:00:00Z"  # incluye CyberDay junio y el Cyber de octub
 PRE_FROM = dt.datetime(2026, 8, 1, tzinfo=dt.timezone.utc)
 PRE_TO = dt.datetime(2026, 11, 10, tzinfo=dt.timezone.utc)  # "precio normal" antes de la previa del evento
 UA = {"User-Agent": "curl/8.5"}
-BRANDS = {"Samsung", "LG", "TCL", "Xiaomi", "Philips", "Sony", "Hisense"}
+BRANDS = {"Samsung", "LG", "TCL", "Xiaomi", "Philips", "Sony", "Hisense", "AOC"}
 GOOD_OS = {"Tizen", "webOS", "Google TV", "Roku TV"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
@@ -105,7 +105,7 @@ def falabella():
                 continue
             for p in results:
                 name, brand = p.get("displayName", ""), (p.get("brand") or "").upper()
-                if brand not in ("SAMSUNG", "LG", "TCL", "XIAOMI", "PHILIPS", "SONY", "HISENSE") or p.get("productId") in seen:
+                if brand not in ("SAMSUNG", "LG", "TCL", "XIAOMI", "PHILIPS", "SONY", "HISENSE", "AOC") or p.get("productId") in seen:
                     continue
                 if brand not in ("SAMSUNG", "LG") and not re.search(r"google|roku", name, re.I):
                     continue
