@@ -1,11 +1,11 @@
 # Monitor Smart TV 40–43" (Samsung, LG, TCL, Xiaomi, Philips, Sony con buen sistema) — presupuesto $200.000
-Actualizado: 2026-11-27 1513 (hora Chile). Fuente: Solotodo (historial por tienda) + Falabella directo.
+Actualizado: 2026-11-27 2112 (hora Chile). Fuente: Solotodo (historial por tienda) + Falabella directo.
 
 ## Resumen por modelo (mejor precio actual en Chile)
 
 | Modelo | Tamaño/Res/Sistema | Mejor precio hoy | Tienda | Mín. histórico (desde mayo) | Precio normal ago–nov | vs. revisión anterior | Veredicto |
 |---|---|---|---|---|---|---|---|
-| Samsung QN40Q5FAAGXZS | 40" Full HD · Tizen | **$128.243** | [ABC](https://www.abc.cl/smart-tv-qled-40-samsung-fhd-tizen-qn40q5faagxzs/29454388.html) | $128.243 (ABC, 2026-11-27) | $213.990 | ▼ $41.747 | 🟢 mínimo histórico (desde mayo) |
+| Samsung QN40Q5FAAGXZS | 40" Full HD · Tizen | **$128.243** | [ABC](https://www.abc.cl/smart-tv-qled-40-samsung-fhd-tizen-qn40q5faagxzs/29454388.html) | $128.243 (ABC, 2026-11-27) | $213.990 | = | 🟢 mínimo histórico (desde mayo) |
 | AOC 43S5155 | 43" Full HD · Roku TV | **$169.990** | [Hites](https://www.hites.com/led-43-aoc-43s5155-full-hd-smart-tv-973734001.html) | $145.990 (Ripley Marketplace, 2026-06-01) | $199.390 | = | 🔴 caro vs. su historial |
 | Samsung UN40F6000FGXZS | 40" Full HD · Tizen | **$169.990** | [Paris Marketplace](https://www.paris.cl/40-fhd-f6000-smart-tv-2025-MKC0SKHXUX.html) | $169.990 (Lider, 2026-06-03) | $219.990 | = | 🟢 mínimo histórico (desde mayo) |
 | TCL 40S5LR | 40" Full HD · Roku TV | **$169.990** | [Lider](https://www.lider.cl/ip/Televisor-Smart-TV-TCL-Roku-TV-40-QLED-FHD-S5LR/00693757487905) | $159.990 (Lider, 2026-08-19) | $179.990 | = | 🟡 aceptable |
@@ -16,6 +16,7 @@ Actualizado: 2026-11-27 1513 (hora Chile). Fuente: Solotodo (historial por tiend
 | TCL 43S5K | 43" Full HD · Google TV | **$199.990** | [Paris Marketplace](https://www.paris.cl/qled-smart-tv-43-full-hd-s5k-MKWUKXD8EB.html) | $169.990 (Ripley Marketplace, 2026-10-27) | $229.828 | = | 🔴 caro vs. su historial |
 | LG 43NU855BPSA | 43" 4K Ultra HD · webOS | **$209.990** | [Paris Marketplace](https://www.paris.cl/smart-tv-43-lg-nano-4k-uhd-ai-nu85-2026-MK84SZHCI1.html) | $199.990 (Paris Marketplace, 2026-11-11) | $269.990 | = | 🟡 aceptable |
 | LG 43LB6500PSB + MINI [43LB6500PSB.MINI] | 43" Full HD · webOS | **$219.990** | [Ripley](https://simple.ripley.cl/smart-tv-lg-full-hd-43-ai-lb65-2026-parlante-xboom-mini-2000412893113p) | $199.990 (Ripley, 2026-10-07) | $249.990 | = | 🟡 aceptable |
+| LG 43LR6000PSA + GRAB [43LR6000PSA.GRAB] | 43" Full HD · webOS | **$219.990** | [Lider](https://www.lider.cl/ip/Televisor-LG-43-43lr6000psa-grab-Smart-TV-Grab/00880609692181) | $199.990 (Lider, 2026-08-13) | $259.990 |  | 🟡 aceptable |
 | Xiaomi TV A Pro 43 2026 [L43MB-APPH] | 43" 4K Ultra HD · Google TV | **$219.990** | [Paris](https://www.paris.cl/qled-smart-tv-43-4k-lm-a-pro-2026-249745999.html) | $209.990 (Paris, 2026-10-09) | $239.990 | = | 🟢 a ≤5% del mínimo histórico |
 
 ## Todas las ofertas bajo $200.000 (por tienda)
@@ -58,16 +59,16 @@ Actualizado: 2026-11-27 1513 (hora Chile). Fuente: Solotodo (historial por tiend
 | **$179.990** | cmr: $179.990, event: $189.990, normal: $299.989 | [40 FHD F6000 Smart TV 2025](https://www.falabella.com/falabella-cl/product/146584886/40-fhd-f6000-smart-tv-2025) | Falabella (vende Samsung) |
 | **$199.990** | cmr: $199.990, event: $209.990, normal: $259.990 | [Smart TV 43 FHD AI LB65 2026](https://www.falabella.com/falabella-cl/product/155754417/smart-tv-lg-43-fhd-ai-lb65-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
 | **$219.990** | internet: $219.990, normal: $319.990 | [SMART TV 43" NANO UHD AI NU800 4K 2026](https://www.falabella.com/falabella-cl/product/80758814/smart-tv-43-nano-uhd-ai-nu800-4k-2026-lg) | Falabella (vende Falabella) |
+| **$219.990** | cmr: $219.990, event: $229.990, normal: $429.990 | [Smart TV 43 NANO 4K UHD AI NU85 2026 + Magic Remote.](https://www.falabella.com/falabella-cl/product/155245044/smart-tv-43-lg-nano-4k-uhd-ai-nu85-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
 | **$219.990** | cmr: $219.990, internet: $229.990, normal: $269.990 | [SMART TV 43" FHD AI LB65 2026](https://www.falabella.com/falabella-cl/product/80758791/smart-tv-43-fhd-ai-lb65-2026-lg) | Falabella (vende Falabella) |
 | **$229.990** | cmr: $229.990, event: $239.990, normal: $412.990 | [43" Crystal UHD U8500H 4K Vision AI Smart TV (2026) + Control por Voz](https://www.falabella.com/falabella-cl/product/153969114/43-crystal-uhd-u8500h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
 | **$229.990** | event: $229.990, normal: $363.990 | [43" Crystal UHD U8000H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/153969109/43-crystal-uhd-u8000h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
 | **$229.990** | internet: $229.990, normal: $399.990 | [43" Crystal UHD U8000H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/80767573/43-crystal-uhd-u8000h-4k-samsung-vision-ai-smart-tv-2026) | Falabella (vende Falabella) |
-| **$229.990** | cmr: $229.990, event: $239.990, normal: $429.990 | [Smart TV 43 NANO 4K UHD AI NU85 2026 + Magic Remote.](https://www.falabella.com/falabella-cl/product/155245044/smart-tv-43-lg-nano-4k-uhd-ai-nu85-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
 | **$229.990** | cmr: $229.990, event: $234.990, normal: $249.990 | [Televisor Smart TV A Pro QLED 43" 4K UHD Google TV 2026.](https://www.falabella.com/falabella-cl/product/150774752/xiaomi-tv-a-pro-43u-2026-43-qled-4k-3840-x-2160) | Falabella (vende Xiaomi) |
 | **$269.990** | cmr: $269.990, event: $279.990, normal: $468.990 | [43 Mini LED M70H 4K Vision AI Smart TV 2026.](https://www.falabella.com/falabella-cl/product/153969098/43-mini-led-m70h-4k-samsung-smart-tv-2026) | Falabella (vende Samsung) |
 | **$279.990** | internet: $279.990, normal: $469.990 | [43" Mini LED M70H 4K Vision AI Smart TV (2026)](https://www.falabella.com/falabella-cl/product/80768186/43-mini-led-m70h-4k-samsung-vision-ai-smart-tv-2026) | Falabella (vende Falabella) |
 | **$279.990** | cmr: $279.990, event: $289.990, normal: $389.990 | [Smart TV 43 QNED AI Mini LED QNED70 4K 2026.](https://www.falabella.com/falabella-cl/product/154507268/smart-tv-lg-43-qned-ai-mini-led-qned70-4k-2026) | Falabella (vende Lg Electronics Inc Chile Limitada) |
-| **$289.990** | cmr: $289.990, event: $299.989, normal: $369.990 | [Smart TV 43" QNED evo AI QNED74 4K 2026 + Magic Remote Control](https://www.falabella.com/falabella-cl/product/158914621/smart-tv-lg-43-qned-evo-ai-qned74-4k-2026-magic-remote-control) | Falabella (vende Lg Electronics Inc Chile Limitada) |
+| **$279.990** | cmr: $279.990, event: $289.990, normal: $369.990 | [Smart TV 43" QNED evo AI QNED74 4K 2026 + Magic Remote Control](https://www.falabella.com/falabella-cl/product/158914621/smart-tv-lg-43-qned-evo-ai-qned74-4k-2026-magic-remote-control) | Falabella (vende Lg Electronics Inc Chile Limitada) |
 | **$519.990** | internet: $519.990, normal: $999.990 | [43" Neo QLED Mini Led 4K QN90F Vision AI Smart TV (2025)](https://www.falabella.com/falabella-cl/product/17437929/43%22-Neo-QLED-4K-QN90F-Vision-AI-Smart-TV-(2025)-Samsung) | Falabella (vende Falabella) |
 
 _Criterio: 'mínimo histórico' = precio más bajo registrado en cualquier tienda chilena desde mayo 2026 (incluye CyberDay de junio y el Cyber de octubre). 'Precio normal inflado' = el precio tachado subió >15% sobre su mediana ago–nov, típico truco para mostrar un descuento mayor._
